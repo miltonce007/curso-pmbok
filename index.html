@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso PMBOK - Gestión de Proyectos TI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>PMBOK Interactive Learning App</h1>
+    <p>Gestión de Proyectos de Tecnología</p>
+  </header>
+
+  <nav class="nav-tabs">
+    <button class="tab-btn active" onclick="switchTab('flashcards')">🎴 Flashcards (50)</button>
+    <button class="tab-btn" onclick="switchTab('quiz')">📝 Test (50 Preguntas)</button>
+    <button class="tab-btn" onclick="switchTab('casos')">📂 Casos de Estudio TI</button>
+    <button class="tab-btn" onclick="switchTab('videos')">🎥 Recursos Visuales</button>
+  </nav>
+
+  <main class="container">
+    <!-- SECCIÓN FLASHCARDS -->
+    <section id="flashcards" class="tab-content active">
+      <div class="card-controls">
+        <button onclick="prevCard()">◀ Anterior</button>
+        <span id="card-counter">1 / 50</span>
+        <button onclick="nextCard()">Siguiente ▶</button>
+      </div>
+      <div class="flashcard-container" onclick="flipCard()">
+        <div class="flashcard" id="flashcard">
+          <div class="card-face front" id="card-front">Cargando concepto...</div>
+          <div class="card-face back" id="card-back">Cargando definición...</div>
+        </div>
+      </div>
+      <p class="hint">💡 Toca o haz clic en la tarjeta para voltearla</p>
+    </section>
+
+    <!-- SECCIÓN QUIZ -->
+    <section id="quiz" class="tab-content">
+      <div class="quiz-header">
+        <span id="quiz-counter">Pregunta 1 de 50</span>
+        <span id="quiz-score">Puntaje: 0</span>
+      </div>
+      <div id="quiz-container">
+        <h3 id="quiz-question">Cargando pregunta...</h3>
+        <div id="quiz-options" class="options-grid"></div>
+        <div id="quiz-feedback" class="feedback"></div>
+        <button id="next-quiz-btn" style="display:none;" onclick="nextQuestion()">Siguiente Pregunta</button>
+      </div>
+    </section>
+
+    <!-- SECCIÓN CASOS DE ESTUDIO -->
+    <section id="casos" class="tab-content">
+      <h2>Casos Prácticos en Proyectos de Tecnología</h2>
+      <div class="case-card">
+        <h3>Caso 1: Migración a la Nube de un Banco (Enfoque Híbrido)</h3>
+        <p><strong>Escenario:</strong> Un banco tradicional requiere migrar sus servicios a AWS cumpliendo regulaciones estrictas de ciberseguridad.</p>
+        <p><strong>Dominio PMBOK Aplicado:</strong> Gestión del Riesgo e Incertidumbre, Dominio de Entrega.</p>
+        <p><strong>Resolución:</strong> Se implementa un marco híbrido: desarrollo ágil (Scrum) para las integraciones de API y enfoque predictivo (Cascada) para auditorías de seguridad y cumplimiento normativo.</p>
+      </div>
+      <div class="case-card">
+        <h3>Caso 2: Fallo de Integración en Sistema ERP</h3>
+        <p><strong>Escenario:</strong> Un proyecto TI con alcance ambiguo sufre desviaciones graves de tiempo y sobrecostos.</p>
+        <p><strong>Dominio PMBOK Aplicado:</strong> Dominio de Interesados y Planificación.</p>
+        <p><strong>Resolución:</strong> Alineación activa de *stakeholders*, definición de un MVP (Producto Mínimo Viable) y control estricto de cambios mediante tablero Kanban.</p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN VIDEOS -->
+    <section id="videos" class="tab-content">
+      <h2>Recursos y Clases Recomendadas</h2>
+      <div class="video-grid">
+        <div class="video-card">
+          <h3>Fundamentos de PMBOK y Gestión Agil</h3>
+          <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLWbgJz8Mcd5U92U-1bE1aJp5Fsh8H-5U3" title="Curso PMBOK" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
